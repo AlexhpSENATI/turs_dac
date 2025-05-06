@@ -143,12 +143,12 @@
     transform: translateY(0);
 }
 
-.navbar.scrolled {
+/* .navbar.scrolled {
     background: rgba(0, 0, 0, 0.9);
     padding: 10px 0;
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .navbar.hidden {
     transform: translateY(-100%);
@@ -362,7 +362,7 @@
     left: 0;
     width: 200%;
     height: 100%;
-    background: linear-gradient(90deg, #ff8a00, #e52e71, #ff8a00);
+    background: linear-gradient(90deg, #ff0000, #e52e71, #ff8a00);
     background-size: 200% auto;
     z-index: -1;
     transition: transform 0.5s ease;
