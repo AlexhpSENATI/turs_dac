@@ -6,7 +6,7 @@ import { FaUser, FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import fondo1 from '../assets/fondo1.png';
 import fondo2 from '../assets/fondo2.png';
-import fondo3 from '../assets/fondo1.png';
+import fondo3 from '../assets/fondo3.png';
 
 const SecHero = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -139,8 +139,6 @@ const SecHero = () => {
                         <Link to="/promociones" className="nav-link">Promociones</Link>
                         <Link to="/blog" className="nav-link">Blog</Link>
                         <Link to="/contacto" className="nav-link">Contacto</Link>
-
-
                     </div>
 
                     <div className={`navbar-right ${isNavbarVisible ? '' : 'hidden'}`}>
