@@ -15,13 +15,11 @@ const Footer = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
-    // Efecto para animación de aparición
     useEffect(() => {
         setIsVisible(true);
         return () => setIsVisible(false);
     }, []);
 
-    // Efecto para mostrar el botón de scroll
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 300) {
