@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 import React from "react";
+
 import SecHero from './components/sec_hero.jsx';
 import Inicio from './components/index.jsx';
 import Contacto from './components/contact.jsx';
