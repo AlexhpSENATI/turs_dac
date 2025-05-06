@@ -6,6 +6,12 @@ import React from "react";
 import SecHero from './components/sec_hero.jsx';
 import Inicio from './components/index.jsx';
 import Contacto from './components/contact.jsx';
+import Destino from './components/destino.jsx';
+import Blog from './components/blog.jsx';  
+import Nosotros from './components/nosotros.jsx';
+import Promocion from './components/promocion.jsx';
+
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -23,6 +29,10 @@ function App() {
         {/* TODOS LOS JSX */}
         <Route path="/" element={<Inicio />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/destino" element={<Destino/>} />
+        <Route path="/blog" element={<Blog/>} />
+        <Route path="/nosotros" element={<Nosotros/>} />
+        <Route path="/promocion" element={<Promocion/>} />
       </Routes>
     </BrowserRouter>
   );
