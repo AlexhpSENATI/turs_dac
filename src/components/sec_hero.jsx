@@ -109,7 +109,7 @@ const SecHero = () => {
             </button>
 
             {/* Indicadores del carrusel */}
-            <div className="carousel-indicators">
+            {/* <div className="carousel-indicators">
                 {slides.map((_, index) => (
                     <button
                         key={index}
@@ -121,14 +121,14 @@ const SecHero = () => {
                         <span className="progress-bar"></span>
                     </button>
                 ))}
-            </div>
+            </div> */}
 
             {/* Navbar */}
             <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
                 <div className="navbar-container">
                     <div className={`navbar-left ${isNavbarVisible ? '' : 'hidden'}`}>
                         <a className="logo" href="#">
-                            Turismo<span className="logo-highlight">HP</span>
+                            Turismo<span className="logo-highlight">DAC</span>
                         </a>
                     </div>
 
@@ -191,7 +191,10 @@ const SecHero = () => {
                 <div className="mouse">
                     <div className="wheel"></div>
                 </div>
-                <p>Desplázate para explorar</p>
+                <div className="test">
+                    <p>Desplázate para explorar</p>
+                </div>
+
             </div>
         </section>
     );
