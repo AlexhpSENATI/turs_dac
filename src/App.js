@@ -43,7 +43,7 @@ function App() {
         <Route path="/registro" element={<RegisterForm />} /> */}
 
 
-        <Route path="/bienvenido" element={<Welcome name={loggedUserName} />} />
+        <Route path="/welcome " element={<Welcome/>} />
 
 
         <Route path="/login" element={<LoginRegisterWrapper />} />
