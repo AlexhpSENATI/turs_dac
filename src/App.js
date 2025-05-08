@@ -5,7 +5,7 @@ import SecHero from './components/sec_hero.jsx';
 import Inicio from './components/index.jsx';
 import Contacto from './components/contact.jsx';
 import Destino from './components/destino.jsx';
-import Blog from './components/blog.jsx';  
+import Blog from './components/blog.jsx';
 import Nosotros from './components/nosotros.jsx';
 import Promocion from './components/promocion.jsx';
 
@@ -43,10 +43,12 @@ function App() {
         <Route path="/registro" element={<RegisterForm />} /> */}
 
 
-        <Route path="/welcome " element={<Welcome/>} />
+        {/* <Route path="/welcome " element={<Welcome />} />
 
 
+        <Route path="/login" element={<LoginRegisterWrapper />} /> */}
         <Route path="/login" element={<LoginRegisterWrapper />} />
+        <Route path="/welcome" element={<Welcome />} />
       </Routes>
     </BrowserRouter>
   );
