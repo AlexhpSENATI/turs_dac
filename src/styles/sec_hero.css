@@ -79,7 +79,7 @@
 }
 
 /* Indicadores del carrusel */
-.carousel-indicators {
+/* .carousel-indicators {
     position: absolute;
     bottom: 30px;
     left: 50%;
@@ -87,6 +87,7 @@
     display: flex;
     gap: 10px;
     z-index: 10;
+    justify-content: center !important; 
 }
 
 .indicator {
@@ -97,10 +98,12 @@
     border-radius: 2px;
     cursor: pointer;
     padding: 0;
+    text-align: center;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
 }
+
 
 .indicator:hover {
     background: rgba(255, 255, 255, 0.7);
@@ -129,7 +132,7 @@
     to {
         transform: translateX(0);
     }
-}
+} */
 
 /* Navbar */
 .navbar {
@@ -414,27 +417,24 @@
 /* Scroll indicator */
 .scroll-down {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
     display: flex;
+
     flex-direction: column;
     align-items: center;
-    z-index: 10;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 1.5s;
 }
 
 .mouse {
     width: 25px;
     height: 40px;
-    border: 2px solid white;
-    border-radius: 15px;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
+    align-items: start;
+    padding-top: 5px;
 }
 
 .wheel {
@@ -463,10 +463,12 @@
     }
 }
 
-.scroll-down p {
-    font-size: 0.9rem;
-    margin-top: 5px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+.test p {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* Responsive */

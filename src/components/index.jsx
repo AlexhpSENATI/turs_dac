@@ -17,7 +17,36 @@ import yanahuanca from '../assets/card/yanahuanca.png';
 import oxapampa from '../assets/card/oxa.png';
 
 
+import collage01 from '../assets/card/collage01.png'
+import collage02 from '../assets/card/collage02.png'
+import collage03 from '../assets/card/collage03.png'
+import collage04 from '../assets/card/collage04.png'
 
+// IMAGENES DEL COLLAGE 
+const images = [
+  {
+    id: 1,
+    src: collage01,
+    alt: "Imagen 1 - Naturaleza"
+  },
+  {
+    id: 2,
+    src: collage02,
+    alt: "Imagen 2 - Ciudad"
+  },
+  {
+    id: 3,
+    src: collage03,
+    alt: "Imagen 3 - Playa"
+  },
+  {
+    id: 4,
+    src: collage04,  // ¡URL nueva y única!
+    alt: "Imagen 4 - Montañas"
+  }
+];
+
+// INFOR DEL CARD DE CADA PROVINCIA
 const InteractiveCards = () => {
   const [cards, setCards] = useState([
     {
@@ -27,7 +56,7 @@ const InteractiveCards = () => {
       image: pasco,
       rating: 4,
       hover: false,
-      color: "#4a6fa5",  // Color azul
+      color: "#4a6fa5",
       weather: "Frío",
       visitantes: "15k/año",
       altitude: "4,330 msnm"
@@ -39,7 +68,7 @@ const InteractiveCards = () => {
       image: yanahuanca,
       rating: 5,
       hover: false,
-      color: "#5a8f6b",  // Color verde
+      color: "#5a8f6b",
       weather: "Templado",
       visitantes: "8k/año",
       altitude: "3,200 msnm"
@@ -51,7 +80,7 @@ const InteractiveCards = () => {
       image: oxapampa,
       rating: 3,
       hover: false,
-      color: "#9d6c82",  // Color morado
+      color: "#9d6c82",
       weather: "Cálido",
       visitantes: "20k/año",
       altitude: "1,814 msnm"
@@ -78,8 +107,9 @@ const InteractiveCards = () => {
 
   return (
     <>
-      <div>
-        <h1>hola</h1>
+      <div className="tituloprincipal">
+        <h1 className="titulo">DANIEL ALCIDES CARRION</h1>
+        <h3 className="provincia">PROVINCIA</h3>
       </div>
       <div className="card-container">
         {cards.map(card => (
@@ -132,9 +162,33 @@ const InteractiveCards = () => {
         ))}
       </div>
 
-      <div>
-        <h1>hola</h1>
+      <div className="collage-undac-contenedor">
+        <div className="collage-undac">
+          {images.map((image) => (
+            <img
+              key={image.id}
+              src={image.src}
+              alt={image.alt}
+              className={`collage-undac-img collage-undac-img-${image.id}`}
+              onError={(e) => {
+                e.target.style.display = 'none'; // Oculta imágenes rotas
+                console.error(`Error al cargar la imagen ${image.id}: ${image.src}`);
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Contenido derecho */}
+        <div className="collage-undac-contenido">
+          <h1>PROVINCIA YANAHUANCA</h1>
+          <p>La provincia de Yanahuanca, en Pasco, resalta por sus paisajes andinos y su herencia cultural.
+            Destacan el sitio arqueológico de Huarautambo, las aguas termales de Villo y Rabí, y el puente colonial de piedra.
+            Sus fiestas tradicionales, como San Juan y Semana Santa, reflejan la alegría de su gente.
+          </p>
+          <button className="collage-undac-boton">Ver Galería</button>
+        </div>
       </div>
+
     </>
   );
 }

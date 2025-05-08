@@ -1,3 +1,29 @@
+/* TITULO PRINCIPAL */
+
+.tituloprincipal {
+  text-align: center;
+  background: #fafafa;
+  height: 150px;
+}
+
+.tituloprincipal .titulo {
+  color: #4facfe;
+  padding-top: 30px;
+  font-size: 3.8rem;
+  font-weight: bold;
+  font-family: fantasy;
+  /* background: #fafafa; */
+}
+
+.tituloprincipal .provincia {
+  color: red;
+  font-size: 1.5rem;
+  font-family: "ArIaL", serif;
+  font-weight: bold;
+  margin-top: 15px;
+  background: #fafafa;
+}
+
 /* CARD CONTAINER */
 .card-container {
   display: flex;
@@ -5,14 +31,13 @@
   gap: 20px;
   flex-wrap: wrap;
   padding: 20px;
+  background: #fafafa;
   font-family: 'Arial', sans-serif;
 }
 
-/* CARD BASE STYLES */
 .card {
   width: 280px;
   height: 455px;
-  /* Reducida la altura */
   border-radius: 5% !important;
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -32,7 +57,6 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* IMAGE STYLES */
 .circle-image {
   width: 120px;
   height: 120px;
@@ -56,7 +80,6 @@
   object-fit: cover;
 }
 
-/* TEXT STYLES */
 .card-title {
   margin: 8px 0;
   font-size: 1.9rem;
@@ -71,7 +94,6 @@
   min-height: 20px;
 }
 
-/* STAR RATING */
 .star-rating {
   display: flex;
   justify-content: center;
@@ -93,7 +115,6 @@
 
 
 
-/* DETAILS SECTION */
 .card-details {
   display: flex;
   flex-direction: column;
@@ -124,10 +145,8 @@
 .icon {
   font-size: 1.2rem;
   color: #ffffff;
-  /* O el color que combine con tu diseño */
 }
 
-/* BUTTON STYLES */
 .card-button {
   background: rgba(255, 255, 255, 0.2);
   color: white;
@@ -146,10 +165,132 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .card {
     width: 260px;
     height: 360px;
+  }
+}
+
+
+/* COLLAGE XD  */
+.collage-undac-contenedor {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+  background: #fafafa;
+}
+
+.collage-undac {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.collage-undac-img {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  object-fit: cover;
+  border: 5px solid white;
+}
+
+.collage-undac-img-1 {
+  width: 60%;
+  height: 60%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: rotate(-5deg);
+}
+
+.collage-undac-img-2 {
+  width: 50%;
+  height: 50%;
+  top: 30%;
+  left: 40%;
+  z-index: 2;
+  transform: rotate(10deg);
+}
+
+.collage-undac-img-3 {
+  width: 55%;
+  height: 55%;
+  top: 50%;
+  left: 10%;
+  z-index: 1;
+  transform: rotate(-8deg);
+}
+
+.collage-undac-img-4 {
+  width: 40%;
+  height: 40%;
+  top: 10%;
+  left: 60%;
+  z-index: 4;
+  transform: rotate(15deg);
+}
+
+.collage-undac-img:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  z-index: 10 !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.collage-undac-contenido {
+  max-width: 500px;
+}
+
+.collage-undac-contenido h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.2;
+  font-weight: bold;
+  text-align: center;
+}
+
+.collage-undac-contenido p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.collage-undac-boton {
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.collage-undac-boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+@media (max-width: 768px) {
+  .collage-undac-contenedor {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .collage-undac {
+    width: 300px;
+    height: 300px;
+  }
+
+  .collage-undac-contenido {
+    text-align: center;
+    padding: 0 20px;
   }
 }

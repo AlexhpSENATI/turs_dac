@@ -109,7 +109,7 @@ const SecHero = () => {
             </button>
 
             {/* Indicadores del carrusel */}
-            <div className="carousel-indicators">
+            {/* <div className="carousel-indicators">
                 {slides.map((_, index) => (
                     <button
                         key={index}
@@ -121,7 +121,7 @@ const SecHero = () => {
                         <span className="progress-bar"></span>
                     </button>
                 ))}
-            </div>
+            </div> */}
 
             {/* Navbar */}
             <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -191,7 +191,10 @@ const SecHero = () => {
                 <div className="mouse">
                     <div className="wheel"></div>
                 </div>
-                <p>Desplázate para explorar</p>
+                <div className="test">
+                    <p>Desplázate para explorar</p>
+                </div>
+
             </div>
         </section>
     );
