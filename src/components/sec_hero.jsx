@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import "../styles/sec_hero.css";
 import { FaUser, FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -9,6 +9,7 @@ import fondo2 from '../assets/fondo2.png';
 import fondo3 from '../assets/fondo3.png';
 
 const SecHero = () => {
+    const navigate = useNavigate();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -141,12 +142,11 @@ const SecHero = () => {
                         <Link to="/contacto" className="nav-link">Contacto</Link>
                     </div>
 
-                    <div className={`navbar-right ${isNavbarVisible ? '' : 'hidden'}`}>
-                        <button className="login-btn">
-                            <FaUser size={16} />
-                            <span>Iniciar sesión</span>
-                        </button>
-                    </div>
+                    <button className="login-btn" onClick={() => navigate('/login')}>
+                        <FaUser size={16} />
+                        <span>Iniciar sesión</span>
+                    </button>
+
                 </div>
             </nav>
 
