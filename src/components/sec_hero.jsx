@@ -128,7 +128,7 @@ const SecHero = () => {
                 <div className="navbar-container">
                     <div className={`navbar-left ${isNavbarVisible ? '' : 'hidden'}`}>
                         <a className="logo" href="#">
-                            Turismo<span className="logo-highlight">HP</span>
+                            Turismo<span className="logo-highlight">DAC</span>
                         </a>
                     </div>
 
