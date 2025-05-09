@@ -9,14 +9,22 @@ import { WiDaySunny } from 'react-icons/wi';
 import { FaUser } from 'react-icons/fa';
 import { FaMountain } from 'react-icons/fa';
 
+import foto01 from '../assets/card/collage03.png'
+import foto02 from '../assets/card/foto02.png'
+import foto03 from '../assets/card/foto03.png'
+import foto04 from '../assets/card/collage04.png'
+import foto05 from '../assets/card/foto05.png'
+import foto06 from '../assets/card/foto06.png'
+import foto07 from '../assets/card/foto07.png'
+import foto08 from '../assets/card/foto08.png'
 
 
-
+// CARDAS
 import pasco from '../assets/card/pasco.png';
 import yanahuanca from '../assets/card/yanahuanca.png';
 import oxapampa from '../assets/card/oxa.png';
 
-
+// COLLAGE 
 import collage01 from '../assets/card/collage01.png'
 import collage02 from '../assets/card/collage02.png'
 import collage03 from '../assets/card/collage03.png'
@@ -122,29 +130,33 @@ const InteractiveCards = () => {
               </div>
               <div className="yanahuanca-item">
                 <i className="far fa-clock"></i>
-                <span>Full Day</span>
+                <span>24/7</span>
               </div>
               <div className="yanahuanca-item">
                 <i className="far fa-calendar-alt"></i>
-                <span>20 Nov 2021</span>
+                <span>08 May 2025</span>
               </div>
               <div className="yanahuanca-item">
                 <i className="fas fa-map-marker-alt"></i>
-                <span>Lima</span>
+                <span>Huánuco</span>
               </div>
               <div className="yanahuanca-item">
                 <i className="fas fa-user-tie"></i>
-                <span>Guía: JC Luna</span>
+                <span>Guía: TursHP</span>
               </div>
             </div>
 
             <div className="yanahuanca-collage">
-              <img src="https://via.placeholder.com/600x400/FF5733/FFFFFF?text=Yanahuanca+1" alt="Yanahuanca 1" className="yanahuanca-img yanahuanca-large" />
-              <img src="https://via.placeholder.com/300x200/33FF57/FFFFFF?text=Yanahuanca+2" alt="Yanahuanca 2" className="yanahuanca-img" />
-              <img src="https://via.placeholder.com/300x200/3357FF/FFFFFF?text=Yanahuanca+3" alt="Yanahuanca 3" className="yanahuanca-img" />
-              <img src="https://via.placeholder.com/300x200/F033FF/FFFFFF?text=Yanahuanca+4" alt="Yanahuanca 4" className="yanahuanca-img" />
-              <img src="https://via.placeholder.com/300x200/FF33A8/FFFFFF?text=Yanahuanca+5" alt="Yanahuanca 5" className="yanahuanca-img" />
-              <img src="https://via.placeholder.com/300x200/33FFF3/FFFFFF?text=Yanahuanca+6" alt="Yanahuanca 6" className="yanahuanca-img" />
+              <img src={foto01} alt="Yanahuanca 1" className="yanahuanca-img yanahuanca-large" />
+              <img src={foto02} alt="Yanahuanca 2" className="yanahuanca-img" />
+              <img src={foto03} alt="Yanahuanca 3" className="yanahuanca-img" />
+              <img src={foto05} alt="Yanahuanca 1" className="yanahuanca-img yanahuanca-large" />
+
+              {/* <img src={foto04} alt="Yanahuanca 4" className="yanahuanca-img" />
+              <img src={foto05} alt="Yanahuanca 5" className="yanahuanca-img" /> */}
+              <img src={foto06} alt="Yanahuanca 6" className="yanahuanca-img" />
+              <img src={foto07} alt="Yanahuanca 7" className="yanahuanca-img" />
+              <img src={foto08} alt="Yanahuanca 7" className="yanahuanca-img" />
             </div>
           </div>
 
