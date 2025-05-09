@@ -7,16 +7,19 @@
 }
 
 .tituloprincipal .titulo {
-  color: #4facfe;
-  padding-top: 30px;
-  font-size: 3.8rem;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.2;
   font-weight: bold;
-  font-family: fantasy;
+  text-align: center;
+  font-weight: bold;
+  /* font-family: fantasy; */
   /* background: #fafafa; */
 }
 
 .tituloprincipal .provincia {
-  color: red;
+  color: rgb(39, 163, 22);
   font-size: 1.5rem;
   font-family: "ArIaL", serif;
   font-weight: bold;
@@ -264,7 +267,7 @@
 
 .collage-undac-boton {
   padding: 12px 30px;
-  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  background: linear-gradient(45deg, #045a0f, #068b17);
   color: white;
   border: none;
   border-radius: 50px;
@@ -555,8 +558,11 @@
 }
 
 .promocion-dac .subtitle {
-  color: var(--primary-color);
+  color: rgb(39, 163, 22);
   font-size: 1.2rem;
+  font-family: "ArIaL", serif;
+  font-weight: bold;
+
 }
 
 .promocion-dac .tours-grid {
@@ -604,7 +610,7 @@
 
 .promocion-dac .more-info {
   display: inline-block;
-  background-color: var(--primary-color);
+  background-color: #068b17;
   color: white;
   padding: 10px 20px;
   border-radius: 30px;
@@ -614,7 +620,8 @@
 }
 
 .promocion-dac .more-info:hover {
-  background-color: #c0392b;
+  background-color: #045a0f;
+  ;
   transform: scale(1.05);
 }
 
@@ -652,4 +659,60 @@
   .promocion-dac h1 {
     font-size: 2rem;
   }
+}
+
+/* CARRUSEL DE PROMOCION */
+
+/* * {
+  box-sizing: border-box;
+} */
+.carruseldac {
+    background: #fafafa;
+
+}
+.carruseldac-prom-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  
+}
+
+.carruseldac-prom-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+
+  
+}
+
+.carruseldac-prom-slide {
+  min-width: calc(100% / 3);
+  padding: 5px;
+}
+
+.carruseldac-prom-slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.carruseldac-prom-indicators {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.carruseldac-prom-dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.carruseldac-prom-dot.active {
+  background-color: #419e0c;
 }

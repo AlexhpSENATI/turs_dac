@@ -123,6 +123,7 @@ const InteractiveCards = () => {
 
   return (
     <>
+      {/* CARD DE FORMULARIOS DE VISITAS */}
       <div className="yanahuanca">
         <div className="yanahuanca-header">
           <h1 className="yanahuanca-title">YANAHUANCA</h1>
@@ -150,7 +151,7 @@ const InteractiveCards = () => {
               </div>
               <div className="yanahuanca-item">
                 <i className="fas fa-user-tie"></i>
-                <span>Guía: TursHP</span>
+                <span>Guía: ToursHP</span>
               </div>
             </div>
 
@@ -208,13 +209,119 @@ const InteractiveCards = () => {
         </div>
       </div>
 
-      {/* TITULO */}
-      <div className="tituloprincipal">
-        <h1 className="titulo">DANIEL ALCIDES CARRION</h1>
-        <h3 className="provincia">PROVINCIA</h3>
+      {/* INFO DE YANAHUANCA COLLAGE */}
+      <div className="collage-undac-contenedor">
+        <div className="collage-undac">
+          {images.map((image) => (
+            <img
+              key={image.id}
+              src={image.src}
+              alt={image.alt}
+              className={`collage-undac-img collage-undac-img-${image.id}`}
+              onError={(e) => {
+                e.target.style.display = 'none'; // Oculta imágenes rotas
+                console.error(`Error al cargar la imagen ${image.id}: ${image.src}`);
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Contenido derecho */}
+        <div className="collage-undac-contenido">
+          <h1>PROVINCIA YANAHUANCA</h1>
+          <p>La provincia de Yanahuanca, en Pasco, resalta por sus paisajes andinos y su herencia cultural.
+            Destacan el sitio arqueológico de Huarautambo, las aguas termales de Villo y Rabí, y el puente colonial de piedra.
+            Sus fiestas tradicionales, como San Juan y Semana Santa, reflejan la alegría de su gente.
+          </p>
+          <button className="collage-undac-boton">Ver Galería</button>
+        </div>
       </div>
 
-      {/* CARD DE INFO */}
+      {/* PROMOCIONES DE VISITAS  LOCAL */}
+      <div className="promocion-dac">
+        <div className="container">
+          <header>
+            <h1>Descubre los Mejores Destinos</h1>
+            <p className="subtitle">RECOMENDACION POR TIEMPO DE INVIERNO</p>
+          </header>
+
+          <div className="tours-grid">
+            {/* Huarautambo */}
+            <div className="tour-card">
+              <div className="tour-badge">
+                <div className="tour-duracion">2 Dias</div>
+              </div>
+              <img
+                src={Huarautambo}
+                alt="Huarautambo"
+                className="tour-image"
+              />
+              <div className="tour-content">
+                <h2 className="tour-title">Huarautambo</h2>
+                <p className="tour-description">
+                  Se cuenta que en este lugar existió un asentamiento del Reino de los Yaro,
+                  que en su momento abarcó gran parte del lado occidental del departamento
+                  de Pasco y que fueron conquistados por los incas durante el gobierno de
+                  Pachacútec.
+                </p>
+                <a href="#" className="more-info">Más informes</a>
+              </div>
+            </div>
+
+            {/* Ichugan */}
+            <div className="tour-card">
+              <div className="tour-badge">
+                <div className="tour-duracion">2 Días</div>
+              </div>
+              <img
+                src={Ichugan}
+                alt="Ichugan"
+                className="tour-image"
+              />
+              <div className="tour-content">
+                <h2 className="tour-title">Ichugan</h2>
+                <p className="tour-description">
+                  Tiene templos, chullpas, unidades domésticas, hornos de construcción de cerámicos,
+                  primer mirador principal adherido como una especie de intihuatana, plazuelas
+                  y unidades domésticas ruinosas, como también aymuray  y/o tambo
+                  (lugar de descanso, enseñanza y relajo).
+                </p>
+                <a href="#" className="more-info">Más informes</a>
+              </div>
+            </div>
+
+            {/* Goñicutac */}
+            <div className="tour-card">
+              <div className="tour-badge">
+                <div className="tour-duracion">1 Dia</div>
+              </div>
+              <img
+                src={Goñicutac}
+                alt="Goñicutac"
+                className="tour-image"
+              />
+              <div className="tour-content">
+                <h2 className="tour-title">Goñicutac</h2>
+                <p className="tour-description">
+                  Este lugar es un legado de los Yaros, una cultura que tuvo influencia de los Wari y que forma parte de
+                  la historia del departamento de Pasco. La ciudadela parece haber sido construida en el siglo XIII según
+                  los investigadores.
+                </p>
+                <br></br>
+                <a href="#" className="more-info">Más informes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* TITULO */}
+      <div className="tituloprincipal">
+        <h1 className="titulo">REGION DE PASCO</h1>
+        <h3 className="provincia">NUESTRAS 3 PROVINCIAS</h3>
+      </div>
+
+      {/* CARD DE INFO DE LAS PROVINCIAS */}
       <div className="card-container">
         {cards.map(card => (
           <div
@@ -264,111 +371,6 @@ const InteractiveCards = () => {
             <button className="card-button">Más información</button>
           </div>
         ))}
-      </div>
-      {/* INFO DE YANAHUANCA */}
-
-      <div className="collage-undac-contenedor">
-        <div className="collage-undac">
-          {images.map((image) => (
-            <img
-              key={image.id}
-              src={image.src}
-              alt={image.alt}
-              className={`collage-undac-img collage-undac-img-${image.id}`}
-              onError={(e) => {
-                e.target.style.display = 'none'; // Oculta imágenes rotas
-                console.error(`Error al cargar la imagen ${image.id}: ${image.src}`);
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Contenido derecho */}
-        <div className="collage-undac-contenido">
-          <h1>PROVINCIA YANAHUANCA</h1>
-          <p>La provincia de Yanahuanca, en Pasco, resalta por sus paisajes andinos y su herencia cultural.
-            Destacan el sitio arqueológico de Huarautambo, las aguas termales de Villo y Rabí, y el puente colonial de piedra.
-            Sus fiestas tradicionales, como San Juan y Semana Santa, reflejan la alegría de su gente.
-          </p>
-          <button className="collage-undac-boton">Ver Galería</button>
-        </div>
-      </div>
-
-      {/* PROMOCIONES DE VISITAS  LOCAL */}
-      <div className="promocion-dac">
-        <div className="container">
-          <header>
-            <h1>Descubre los Mejores Destinos</h1>
-            <p className="subtitle">zonas turisticas local</p>
-          </header>
-
-          <div className="tours-grid">
-            {/* Huarautambo */}
-            <div className="tour-card">
-              <div className="tour-badge">
-                <div className="tour-duracion">Full Day</div>
-              </div>
-              <img
-                src=""
-                alt="Huarautambo"
-                className="tour-image"
-              />
-              <div className="tour-content">
-                <h2 className="tour-title">Huarautambo</h2>
-                <p className="tour-description">
-                  Se cuenta que en este lugar existió un asentamiento del Reino de los Yaro, 
-                  que en su momento abarcó gran parte del lado occidental del departamento 
-                  de Pasco y que fueron conquistados por los incas durante el gobierno de 
-                  Pachacútec.
-                </p>
-                <a href="#" className="more-info">Más informes</a>
-              </div>
-            </div>
-
-            {/* Ichugan */}
-            <div className="tour-card">
-              <div className="tour-badge">
-                <div className="tour-duracion">2 Días</div>
-              </div>
-              <img
-                src=""
-                alt="Ichugan"
-                className="tour-image"
-              />
-              <div className="tour-content">
-                <h2 className="tour-title">Ichugan</h2>
-                <p className="tour-description">
-                  Tiene templos, chullpas, unidades domésticas, hornos de construcción de cerámicos, 
-                  primer mirador principal adherido como una especie de intihuatana, plazuelas 
-                  y unidades domésticas ruinosas, como también aymuray  y/o tambo 
-                  (lugar de descanso, enseñanza y relajo).
-                </p>
-                <a href="#" className="more-info">Más informes</a>
-              </div>
-            </div>
-
-            {/* Goñicutac */}
-            <div className="tour-card">
-              <div className="tour-badge">
-                <div className="tour-duracion">Full Day</div>
-              </div>
-              <img
-                src=""
-                alt="Goñicutac"
-                className="tour-image"
-              />
-              <div className="tour-content">
-                <h2 className="tour-title">Goñicutac</h2>
-                <p className="tour-description">
-                  Este lugar es un legado de los Yaros, una cultura que tuvo influencia de los Wari y que forma parte de 
-                  la historia del departamento de Pasco. La ciudadela parece haber sido construida en el siglo XIII según
-                  los investigadores. 
-                </p>
-                <a href="#" className="more-info">Más informes</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
     </>
