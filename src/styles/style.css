@@ -295,7 +295,9 @@
   }
 }
 
-/* FORMULARIO */
+/* FORMULARIO DE YANAHUANCA */
+
+
 .yanahuanca {
   font-family: 'Arial', sans-serif;
   max-width: 1200px;
@@ -360,7 +362,7 @@
   height: 40px;
   width: 40px;
   color: white;
-  background: #068b17 ;
+  background: #068b17;
   border-radius: 50%;
   font-size: 16px;
 
@@ -447,8 +449,8 @@
 } */
 
 .form-group input:focus {
-  outline: none; 
-  border: 2px solid #068b17; 
+  outline: none;
+  border: 2px solid #068b17;
 }
 
 
@@ -513,5 +515,141 @@
 
   .yanahuanca-large {
     grid-column: span 1;
+  }
+}
+
+/* PROMODCIONES DAC */
+
+.promocion-dac {
+  --primary-color: #e74c3c;
+  --secondary-color: #2c3e50;
+  --text-color: #333;
+  --light-bg: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.promocion-dac * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.promocion-dac .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promocion-dac header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.promocion-dac h1 {
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.promocion-dac .subtitle {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.promocion-dac .tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.promocion-dac .tour-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.promocion-dac .tour-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.promocion-dac .tour-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.promocion-dac .tour-content {
+  padding: 20px;
+}
+
+.promocion-dac .tour-title {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.promocion-dac .tour-description {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.promocion-dac .more-info {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.promocion-dac .more-info:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.promocion-dac .tour-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.promocion-dac .tour-duracion {
+  position: absolute;
+  top: 30px;
+  right: -40px;
+  width: 200px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-align: center;
+  transform: rotate(45deg);
+  z-index: 2;
+  padding: 6px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .promocion-dac .tours-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promocion-dac h1 {
+    font-size: 2rem;
   }
 }
