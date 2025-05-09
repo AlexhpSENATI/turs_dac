@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import React, { useState } from "react";
 
 import SecHero from './components/sec_hero.jsx';

@@ -107,6 +107,87 @@ const InteractiveCards = () => {
 
   return (
     <>
+      <div className="yanahuanca">
+        <div className="yanahuanca-header">
+          <h1 className="yanahuanca-title">YANAHUANCA</h1>
+          <div className="yanahuanca-discount">21% DESCUENTO</div>
+        </div>
+
+        <div className="yanahuanca-main">
+          <div className="yanahuanca-images">
+            <div className="yanahuanca-programa">
+              <div className="yanahuanca-item">
+                <i className="fas fa-map-marked-alt"></i>
+                <span>Tour especial</span>
+              </div>
+              <div className="yanahuanca-item">
+                <i className="far fa-clock"></i>
+                <span>Full Day</span>
+              </div>
+              <div className="yanahuanca-item">
+                <i className="far fa-calendar-alt"></i>
+                <span>20 Nov 2021</span>
+              </div>
+              <div className="yanahuanca-item">
+                <i className="fas fa-map-marker-alt"></i>
+                <span>Lima</span>
+              </div>
+              <div className="yanahuanca-item">
+                <i className="fas fa-user-tie"></i>
+                <span>Guía: JC Luna</span>
+              </div>
+            </div>
+
+            <div className="yanahuanca-collage">
+              <img src="https://via.placeholder.com/600x400/FF5733/FFFFFF?text=Yanahuanca+1" alt="Yanahuanca 1" className="yanahuanca-img yanahuanca-large" />
+              <img src="https://via.placeholder.com/300x200/33FF57/FFFFFF?text=Yanahuanca+2" alt="Yanahuanca 2" className="yanahuanca-img" />
+              <img src="https://via.placeholder.com/300x200/3357FF/FFFFFF?text=Yanahuanca+3" alt="Yanahuanca 3" className="yanahuanca-img" />
+              <img src="https://via.placeholder.com/300x200/F033FF/FFFFFF?text=Yanahuanca+4" alt="Yanahuanca 4" className="yanahuanca-img" />
+              <img src="https://via.placeholder.com/300x200/FF33A8/FFFFFF?text=Yanahuanca+5" alt="Yanahuanca 5" className="yanahuanca-img" />
+              <img src="https://via.placeholder.com/300x200/33FFF3/FFFFFF?text=Yanahuanca+6" alt="Yanahuanca 6" className="yanahuanca-img" />
+            </div>
+          </div>
+
+          <div className="yanahuanca-form">
+            <div className="yanahuanca-price">
+              <div className="price-current">S/197.50</div>
+              <div className="price-original">Desde $250.00/persona</div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="nombre">NOMBRE</label>
+              <input type="text" id="nombre" placeholder="Ingrese su nombre" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="apellido">APELLIDO</label>
+              <input type="text" id="apellido" placeholder="Ingrese su apellido" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="celular">CELULAR</label>
+              <input type="tel" id="celular" placeholder="Ingrese su celular" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="fecha">FECHA DE SALIDA</label>
+              <input type="text" id="fecha" placeholder="yyyy-mm-dd" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="adultos">ADULTOS</label>
+              <input type="number" id="adultos" defaultValue="1" min="1" />
+            </div>
+
+            <div className="yanahuanca-summary">
+              $/197.50 = $/197.50
+            </div>
+
+            <button className="yanahuanca-btn">RESERVA AHORA</button>
+            <div className="yanahuanca-method">Online</div>
+          </div>
+        </div>
+      </div>
       <div className="tituloprincipal">
         <h1 className="titulo">DANIEL ALCIDES CARRION</h1>
         <h3 className="provincia">PROVINCIA</h3>
