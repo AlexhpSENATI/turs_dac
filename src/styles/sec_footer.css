@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color:  #4facfe;
-  --accent-color: #00f2fe;
+  --primary-color: #020202;
+  --secondary-color:  #ffffff;
+  --accent-color: #068b17;
   --text-color: #ecf0f1;
-  --hover-color:  #4facfe;
-  --bg-color: #1a252f;
+  --hover-color:  #068b17;
+  --bg-color: #222222;
   --social-hover: rgba(255, 255, 255, 0.2);
 }
 
@@ -107,7 +107,7 @@
 
 .subscribe-btn {
   padding: 0 25px;
-  background: var(--secondary-color);
+  background: var(--accent-color);
   color: white;
   border: none;
   font-weight: bold;
@@ -183,7 +183,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--secondary-color);
+  background: var(--accent-color);
   transition: width 0.3s ease;
 }
 
@@ -305,7 +305,7 @@
 }
 
 .back-to-top:hover {
-  background: #00f2fe;
+  background: #068b17;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }

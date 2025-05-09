@@ -3,10 +3,12 @@
 .tituloprincipal {
   text-align: center;
   background: #fafafa;
+  
   height: 150px;
 }
 
 .tituloprincipal .titulo {
+  margin-top: 15px;
   font-size: 2.8rem;
   margin-bottom: 20px;
   color: #333;
