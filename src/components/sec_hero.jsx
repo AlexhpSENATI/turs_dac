@@ -137,7 +137,7 @@ const SecHero = () => {
                         <Link to="/" className="nav-link">Inicio</Link>
                         <Link to="/nosotros" className="nav-link">Nosotros</Link>
                         <Link to="/destinos" className="nav-link">Destinos</Link>
-                        <Link to="/promociones" className="nav-link">Promociones</Link>
+                        <Link to="/promocion" className="nav-link">Promociones</Link>
                         <Link to="/blog" className="nav-link">Blog</Link>
                         <Link to="/contacto" className="nav-link">Contacto</Link>
                     </div>

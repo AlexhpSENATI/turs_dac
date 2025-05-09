@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel 3 en 3</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: calc(100% / 3); /* 3 imágenes visibles */
+      padding: 5px;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      /* border-radius: 10px; */
+    }
+
+    .carousel-indicators {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+    
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-slide"><img src="src/assets/fondo1.png" alt="img1"></div>
+      <div class="carousel-slide"><img src="src/assets/fondo1.png" alt="img2"></div>
+      <div class="carousel-slide"><img src="src/assets/fondo1.png" alt="img3"></div>
+      <div class="carousel-slide"><img src="src/assets/fondo3.png" alt="img4"></div>
+      <div class="carousel-slide"><img src="src/assets/fondo3.png" alt="img5"></div>
+      <div class="carousel-slide"><img src="src/assets/fondo3.png" alt="img6"></div>
+
+      <div class=""></div>
+      <div class=""></div>
+      <div
+
+      <div></div>
+    </div>
+    <div class="carousel-indicators">
+      <span class="dot active" onclick="moveToSlide(0)"></span>
+      <span class="dot" onclick="moveToSlide(1)"></span>
+    </div>
+  </div>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const dots = document.querySelectorAll('.dot');
+    const slidesPerView = 3;
+
+    function moveToSlide(index) {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = 'translateX(-' + (slideWidth * slidesPerView * index) + 'px)';
+
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    // Auto-slide (opcional)
+    let current = 0;
+    setInterval(() => {
+      current = (current + 1) % Math.ceil(slides.length / slidesPerView);
+      moveToSlide(current);
+    }, 5000);
+  </script>
+
+</body>
+</html>
