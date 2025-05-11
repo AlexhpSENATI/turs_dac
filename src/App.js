@@ -15,6 +15,9 @@ import Promocion from './components/promocion.jsx';
 import Welcome from './components/Welcome.jsx';
 import LoginRegisterWrapper from './components/LoginRegisterWrapper.jsx';
 
+import TourPackages from './components/tourPackages.jsx';
+
+
 // Componente que detecta cambios de ruta y muestra el loader
 const RouterWrapper = () => {
   const location = useLocation();
@@ -25,7 +28,7 @@ const RouterWrapper = () => {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    },1800); // Duración del Preloader
+    },1420); // Duración del Preloader
 
     return () => clearTimeout(timer);
   }, [location]);
@@ -35,16 +38,19 @@ const RouterWrapper = () => {
   }
 
   return (
+    
     <Routes>
       <Route path="/" element={<Inicio />} />
       <Route path="/sec_hero" element={<SecHero />} />
       <Route path="/contacto" element={<Contacto />} />
       <Route path="/destino" element={<Destino />} />
+      {/* <Route path="/destino" element={<Destino  />} /> */}
       <Route path="/blog" element={<Blog />} />
-      <Route path="/nosotros" element={<Nosotros />} />
+      <Route path="/nosotros" element={<Nosotros />} /> 
       <Route path="/promocion" element={<Promocion />} />
       <Route path="/login" element={<LoginRegisterWrapper />} />
       <Route path="/welcome" element={<Welcome />} />
+      <Route path='/paquetes-turisticos' element={<TourPackages/>} />
     </Routes>
   );
 };

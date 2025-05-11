@@ -3,6 +3,8 @@ import '../styles/style.css';
 
 import SecHero from "../components/sec_hero.jsx";
 import Footer from "../components/sec_footer.jsx";
+import TourPackages from "../components/tourPackages.jsx";
+
 
 import Logo from "../assets/logo.png"
 
@@ -71,8 +73,9 @@ const Pagnosotros = () => {
 
       <div className="nosotros-foto-container">
         <div className="nosotros-foto-linea-decorativa"></div>
+        <h1 className="nosotros-foto-title">GALERÍA DE FOTOS</h1>
+        <div className="nosotros-foto-galeria">
 
-        <h1 className="nosotros-foto-title">GALERÍA DE FOTOS</h1>        <div className="nosotros-foto-galeria">
           {ImagenesNos.map((src, index) => (
             <img
               key={index}
@@ -93,6 +96,10 @@ const Pagnosotros = () => {
           </div>
         )}
       </div>
+
+      {/* Sección de paquetes turísticos */}
+
+
     </>
   );
 };
@@ -102,6 +109,7 @@ function Nosotros() {
     <>
       < SecHero />
       <Pagnosotros />
+      <TourPackages />
       <Footer />
     </>
 
