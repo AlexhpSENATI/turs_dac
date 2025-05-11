@@ -6,16 +6,18 @@ import Footer from "../components/sec_footer.jsx";
 
 import Logo from "../assets/logo.png"
 
+
+
 // GALERIA NOSOTROS 
 const ImagenesNos = [
-  'img1.jpg',
-  'img2.jpg',
-  'img3.jpg',
-  'img4.jpg',
-  'img5.jpg',
-  'img6.jpg',
-  'img7.jpg',
-  'img8.jpg'
+  './img/nosotrosfotos/fotoN01.png',
+  './img/nosotrosfotos/fotoN02.png',
+  './img/nosotrosfotos/fotoN03.png',
+  './img/nosotrosfotos/fotoN04.png',
+  './img/nosotrosfotos/fotoN05.png',
+  './img/nosotrosfotos/fotoN06.png',
+  './img/nosotrosfotos/fotoN07.png',
+  './img/nosotrosfotos/fotoN08.png'
 ];
 
 
@@ -68,8 +70,9 @@ const Pagnosotros = () => {
       </div>
 
       <div className="nosotros-foto-container">
-        <h1 className="nosotros-foto-title">GALERÍA DE FOTOS</h1>
-        <div className="nosotros-foto-galeria">
+        <div className="nosotros-foto-linea-decorativa"></div>
+
+        <h1 className="nosotros-foto-title">GALERÍA DE FOTOS</h1>        <div className="nosotros-foto-galeria">
           {ImagenesNos.map((src, index) => (
             <img
               key={index}
