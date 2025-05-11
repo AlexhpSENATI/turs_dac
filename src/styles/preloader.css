@@ -1,19 +1,73 @@
 .preloader {
   position: fixed;
-  top: 0; left: 0;
+  top: 0; 
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.preloader-content {
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .preloader img {
-  width: 500px;
+  width: 560px;
   height: 500px;
-  /* animation: pulse 2.5s infinite ease-in-out; */
+  /* animation: pulse 1.5s infinite ease-in-out; */
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  margin-bottom: 20px;
+}
+
+.typewriter-wrapper {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Typewriter effect */
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #14ff33;
+  font-size: 1.5rem;
+  color: #333;
+  animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+.typewriter-text strong {
+  color: #045a0f;
+  font-weight: 700;
+}
+
+.typewriter-text .highlight {
+  color: #14ff33;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
 }
 
 @keyframes pulse {
