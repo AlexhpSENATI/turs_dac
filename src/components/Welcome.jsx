@@ -54,33 +54,6 @@ const Welcome = () => {
         }
     };
 
-    // ... (el resto de tu componente Welcome sigue igual)
-    // const handleDelete = async (id) => {
-    //     if (window.confirm('¿Estás seguro de que deseas eliminar esta reserva?')) {
-    //         try {
-    //             const response = await fetch(`http://localhost/api/reservas.php?id=${id}`, {
-    //                 method: 'DELETE',
-    //                 headers: {
-    //                     'Content-Type': 'application/json',
-    //                 },
-    //                 body: JSON.stringify({ id: id })
-    //             });
-
-    //             if (!response.ok) {
-    //                 const errorText = await response.text();
-    //                 throw new Error(errorText || 'Error al eliminar');
-    //             }
-
-    //             const result = await response.json();
-    //             alert(result.message);
-    //             fetchReservas(); // Actualizar lista
-    //         } catch (error) {
-    //             console.error('Error eliminando reserva:', error);
-    //             alert(`Error al eliminar: ${error.message}`);
-    //         }
-    //     }
-    // };
-
     const formatDate = (dateString) => {
         const options = { day: 'numeric', month: 'long', year: 'numeric' };
         return new Date(dateString).toLocaleDateString('es-ES', options);
@@ -90,7 +63,6 @@ const Welcome = () => {
         <div className="welcome-container">
             <div className="welcome-header">
                 <h1>Bienvenido, {name}</h1>
-                <p>Aquí puedes gestionar todas tus reservas turísticas</p>
             </div>
 
             {loading ? (
