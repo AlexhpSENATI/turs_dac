@@ -48,7 +48,7 @@ const Welcome = () => {
 
             const result = await response.json();
             alert(result.message);
-            fetchReservas(); // Actualizar lista
+            fetchReservas();
         } catch (error) {
             console.error('Error eliminando reserva:', error);
             alert(`Error al eliminar: ${error.message}`);

@@ -117,7 +117,6 @@
     margin: 5px 0;
 }
 
-/* Animaciones */
 .login-turs-form-animate {
     animation: login-turs-fadeIn 0.5s ease;
 }
