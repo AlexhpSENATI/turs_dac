@@ -1,0 +1,204 @@
+.dash-turs-welcome-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3e6cb 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.dash-turs-welcome-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dash-turs-welcome-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideIn 0.8s ease-out;
+}
+
+.dash-turs-loading-message,
+.dash-turs-error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.dash-turs-loading-message {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+.dash-turs-error-message {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+.dash-turs-reservas-section {
+    padding: 1.5rem;
+}
+
+.dash-turs-reservas-section h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.dash-turs-reservas-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: #27ae60;
+    transition: width 0.3s ease;
+}
+
+.dash-turs-reservas-section h2:hover::after {
+    width: 100%;
+}
+
+.dash-turs-no-reservas {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.dash-turs-table-responsive {
+    overflow-x: auto;
+}
+
+.dash-turs-reservas-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dash-turs-reservas-table th,
+.dash-turs-reservas-table td {
+    padding: 1rem;
+    text-align: left;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.dash-turs-reservas-table th {
+    background: #27ae60;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dash-turs-reservas-table tr {
+    transition: background 0.3s ease;
+}
+
+.dash-turs-reservas-table tr:hover {
+    background: rgba(39, 174, 96, 0.1);
+}
+
+.dash-turs-reservas-table td {
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.dash-turs-delete-btn {
+    padding: 0.5rem 1rem;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.dash-turs-delete-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dash-turs-delete-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .dash-turs-welcome-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .dash-turs-welcome-header h1 {
+        font-size: 2rem;
+    }
+
+    .dash-turs-reservas-table th,
+    .dash-turs-reservas-table td {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    .dash-turs-delete-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .dash-turs-reservas-table {
+        font-size: 0.8rem;
+    }
+
+    .dash-turs-reservas-table th,
+    .dash-turs-reservas-table td {
+        padding: 0.5rem;
+    }
+}
