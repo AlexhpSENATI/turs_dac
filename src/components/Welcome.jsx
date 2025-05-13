@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import "../styles/dash_turs.css";
 
 const Welcome = () => {
     const location = useLocation();
@@ -27,7 +28,7 @@ const Welcome = () => {
             setLoading(false);
         }
     };
-    // MODIFICA SOLO LA FUNCIÓN handleDelete:
+
     const handleDelete = async (id) => {
         if (!window.confirm('¿Estás seguro de eliminar esta reserva?')) return;
 
@@ -60,24 +61,24 @@ const Welcome = () => {
     };
 
     return (
-        <div className="welcome-container">
-            <div className="welcome-header">
+        <div className="dash-turs-welcome-container">
+            <div className="dash-turs-wwelcome-header">
                 <h1>Bienvenido, {name}</h1>
             </div>
 
             {loading ? (
-                <div className="loading-message">Cargando reservas...</div>
+                <div className="dash-turs-loading-message">Cargando reservas...</div>
             ) : error ? (
-                <div className="error-message">Error: {error}</div>
+                <div className="dash-turs-error-message">Error: {error}</div>
             ) : (
-                <div className="reservas-section">
+                <div className="dash-turs-reservas-section">
                     <h2>Tus Reservas</h2>
 
                     {reservas.length === 0 ? (
-                        <p className="no-reservas">No hay reservas registradas.</p>
+                        <p className="dash-turs-no-reservas">No hay reservas registradas.</p>
                     ) : (
-                        <div className="table-responsive">
-                            <table className="reservas-table">
+                        <div className="dash-turs-table-responsive">
+                            <table className="dash-turs-reservas-table">
                                 <thead>
                                     <tr>
                                         <th>Lugar</th>
@@ -103,7 +104,7 @@ const Welcome = () => {
                                             <td>
                                                 <button
                                                     onClick={() => handleDelete(reserva.id)}
-                                                    className="delete-btn"
+                                                    className="dash-turs-delete-btn"
                                                 >
                                                     Eliminar
                                                 </button>
@@ -116,98 +117,6 @@ const Welcome = () => {
                     )}
                 </div>
             )}
-
-            <style jsx>{`
-                .welcome-container {
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 20px;
-                    font-family: Arial, sans-serif;
-                }
-                
-                .welcome-header {
-                    text-align: center;
-                    margin-bottom: 40px;
-                    padding: 20px;
-                    background-color: #f8f9fa;
-                    border-radius: 8px;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                }
-                
-                .welcome-header h1 {
-                    color: #2c3e50;
-                    margin-bottom: 10px;
-                }
-                
-                .reservas-section {
-                    margin-top: 30px;
-                    background-color: white;
-                    padding: 20px;
-                    border-radius: 8px;
-                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                }
-                
-                .reservas-section h2 {
-                    color: #2c3e50;
-                    margin-bottom: 20px;
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid #eee;
-                }
-                
-                .table-responsive {
-                    overflow-x: auto;
-                }
-                
-                .reservas-table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin-top: 20px;
-                }
-                
-                .reservas-table th, .reservas-table td {
-                    padding: 12px 15px;
-                    text-align: left;
-                    border-bottom: 1px solid #ddd;
-                }
-                
-                .reservas-table th {
-                    background-color: #3498db;
-                    color: white;
-                    position: sticky;
-                    top: 0;
-                }
-                
-                .reservas-table tr:hover {
-                    background-color: #f5f5f5;
-                }
-                
-                .delete-btn {
-                    background-color: #e74c3c;
-                    color: white;
-                    border: none;
-                    padding: 6px 12px;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    transition: background-color 0.3s;
-                }
-                
-                .delete-btn:hover {
-                    background-color: #c0392b;
-                }
-                
-                .loading-message, .no-reservas, .error-message {
-                    text-align: center;
-                    padding: 20px;
-                    margin: 20px 0;
-                    background-color: #f8f9fa;
-                    border-radius: 4px;
-                }
-                
-                .error-message {
-                    color: #e74c3c;
-                    background-color: #fadbd8;
-                }
-            `}</style>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "../styles/login_turs.css";
 
 const LoginRegisterWrapper = () => {
     const [isLogin, setIsLogin] = useState(true);
@@ -7,10 +8,10 @@ const LoginRegisterWrapper = () => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
     const [users, setUsers] = useState([]);
+    const [isAnimating, setIsAnimating] = useState(false);
 
     const navigate = useNavigate();
 
-    // Inicializar con usuario admin por defecto si no existe
     useEffect(() => {
         const savedUsers = JSON.parse(localStorage.getItem('users'));
         if (!savedUsers || !savedUsers.some(user => user.email === 'admin@gmail.com')) {
@@ -30,10 +31,17 @@ const LoginRegisterWrapper = () => {
         }
     }, []);
 
+    const toggleForm = () => {
+        setIsAnimating(true);
+        setTimeout(() => {
+            setIsLogin(!isLogin);
+            setIsAnimating(false);
+        }, 300);
+    };
+
     const handleRegister = (e) => {
         e.preventDefault();
         if (email && pass && name) {
-            // Verificar si el usuario ya existe
             const userExists = users.some(user => user.email === email);
             if (userExists) {
                 alert('Este correo ya está registrado');
@@ -46,8 +54,7 @@ const LoginRegisterWrapper = () => {
             localStorage.setItem('users', JSON.stringify(updatedUsers));
             setUsers(updatedUsers);
             alert('Registrado correctamente');
-            setIsLogin(true); // cambiar a login
-            // Limpiar formulario
+            toggleForm();
             setName('');
             setEmail('');
             setPass('');
@@ -61,141 +68,95 @@ const LoginRegisterWrapper = () => {
         const user = users.find(u => u.email === email && u.pass === pass);
         
         if (user) {
-            if (user.role === 'admin') {
-                navigate('/welcome', { state: { name: user.name } });
-            } else {
-                navigate('/welcome', { state: { name: user.name } });
-            }
+            navigate('/welcome', { state: { name: user.name } });
         } else {
             alert('Correo o contraseña incorrectos');
         }
     };
 
     return (
-        <div style={{
-            maxWidth: '400px',
-            margin: '50px auto',
-            padding: '20px',
-            border: '1px solid #ccc',
-            borderRadius: '8px',
-            textAlign: 'center'
-        }}>
+        <div className={`login-turs-container ${isAnimating ? 'login-turs-form-animate' : ''}`}>
+            <div className="login-turs-header">
+                <h2 className="login-turs-title">{isLogin ? 'Iniciar sesión' : 'Registro'}</h2>
+                <div className="login-turs-toggle-line"></div>
+            </div>
+            
             {isLogin ? (
-                <>
-                    <h2>Iniciar sesión</h2>
-                    <form onSubmit={handleLogin}>
+                <form onSubmit={handleLogin} className="login-turs-form">
+                    <div className="login-turs-input-group">
                         <input
                             type="email"
                             placeholder="Correo electrónico"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+                            className="login-turs-input"
                         />
+                    </div>
+                    <div className="login-turs-input-group">
                         <input
                             type="password"
                             placeholder="Contraseña"
                             value={pass}
                             onChange={(e) => setPass(e.target.value)}
                             required
-                            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+                            className="login-turs-input"
                         />
-                        <button 
-                            type="submit"
-                            style={{
-                                width: '100%',
-                                padding: '10px',
-                                margin: '10px 0',
-                                backgroundColor: '#4CAF50',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '4px',
-                                cursor: 'pointer'
-                            }}
-                        >
-                            Entrar
-                        </button>
-                    </form>
-                    <p style={{ marginTop: '10px' }}>
-                        ¿No tienes cuenta?{" "}
-                        <button 
-                            onClick={() => setIsLogin(false)}
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                color: '#2196F3',
-                                cursor: 'pointer',
-                                textDecoration: 'underline'
-                            }}
-                        >
-                            Regístrate
-                        </button>
-                    </p>
-                    <div style={{ marginTop: '20px', fontSize: '12px', color: '#666' }}>
-                        <p>Usuario admin: admin@gmail.com</p>
-                        <p>Contraseña: admin123</p>
                     </div>
-                </>
+                    <button type="submit" className="login-turs-button">
+                        Entrar
+                    </button>
+                </form>
             ) : (
-                <>
-                    <h2>Registro</h2>
-                    <form onSubmit={handleRegister}>
+                <form onSubmit={handleRegister} className="login-turs-form">
+                    <div className="login-turs-input-group">
                         <input
                             type="text"
                             placeholder="Nombre completo"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
-                            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+                            className="login-turs-input"
                         />
+                    </div>
+                    <div className="login-turs-input-group">
                         <input
                             type="email"
                             placeholder="Correo electrónico"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+                            className="login-turs-input"
                         />
+                    </div>
+                    <div className="login-turs-input-group">
                         <input
                             type="password"
                             placeholder="Contraseña"
                             value={pass}
                             onChange={(e) => setPass(e.target.value)}
                             required
-                            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+                            className="login-turs-input"
                         />
-                        <button 
-                            type="submit"
-                            style={{
-                                width: '100%',
-                                padding: '10px',
-                                margin: '10px 0',
-                                backgroundColor: '#2196F3',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '4px',
-                                cursor: 'pointer'
-                            }}
-                        >
-                            Registrar
-                        </button>
-                    </form>
-                    <p style={{ marginTop: '10px' }}>
-                        ¿Ya tienes cuenta?{" "}
-                        <button 
-                            onClick={() => setIsLogin(true)}
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                color: '#2196F3',
-                                cursor: 'pointer',
-                                textDecoration: 'underline'
-                            }}
-                        >
-                            Iniciar sesión
-                        </button>
-                    </p>
-                </>
+                    </div>
+                    <button type="submit" className="login-turs-button">
+                        Registrar
+                    </button>
+                </form>
+            )}
+
+            <div className="login-turs-toggle-text">
+                {isLogin ? '¿No tienes cuenta? ' : '¿Ya tienes cuenta? '}
+                <button onClick={toggleForm} className="login-turs-toggle-button">
+                    {isLogin ? 'Regístrate' : 'Iniciar sesión'}
+                </button>
+            </div>
+
+            {isLogin && (
+                <div className="login-turs-admin-info">
+                    <p>Usuario admin: admin@gmail.com</p>
+                    <p>Contraseña: admin123</p>
+                </div>
             )}
         </div>
     );
