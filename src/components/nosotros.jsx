@@ -3,7 +3,7 @@ import '../styles/style.css';
 
 import SecHero from "../components/sec_hero.jsx";
 import Footer from "../components/sec_footer.jsx";
-import TourPackages from "../components/tourPackages.jsx";
+// import TourPackages from "../components/tourPackages.jsx";
 
 
 import Logo from "../assets/logo.png"
@@ -109,7 +109,7 @@ function Nosotros() {
     <>
       < SecHero />
       <Pagnosotros />
-      <TourPackages />
+      {/* <TourPackages /> */}
       <Footer />
     </>
 
