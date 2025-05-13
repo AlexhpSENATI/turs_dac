@@ -91,8 +91,7 @@ const TourPackages = () => {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return new Date(dateString).toLocaleDateString('es-ES', options);
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -102,23 +101,74 @@ const TourPackages = () => {
     }
 
     const reservationData = {
-      ...formData,
+      lugar: currentPackage.title, // Esto será HUARAUTAMBO u otro lugar
+      nombre: formData.nombre,
+      apellido: formData.apellido,
+      celular: formData.celular,
+      email: formData.email,
+      fecha_salida: formData.fecha,
+      adultos: parseInt(formData.adultos) || 1,
       paquete: currentPackage.title,
-      precioTotal: calculateTotalPrice()
+      precio_total: calculateTotalPrice()
     };
 
-    console.log('Datos de reserva:', reservationData);
-    alert(`Gracias ${formData.nombre}, hemos recibido tu reserva. Te enviaremos la confirmación a ${formData.email}`);
-    closeModal();
-    setFormData({
-      nombre: '',
-      apellido: '',
-      celular: '',
-      email: '',
-      fecha: new Date().toISOString().split('T')[0],
-      adultos: 1
-    });
+    try {
+      const response = await fetch('http://localhost/turs_dac/api/reservas.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reservationData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(`Gracias ${formData.nombre}, hemos recibido tu reserva. Te enviaremos la confirmación a ${formData.email}`);
+        closeModal();
+        setFormData({
+          nombre: '',
+          apellido: '',
+          celular: '',
+          email: '',
+          fecha: new Date().toISOString().split('T')[0],
+          adultos: 1
+        });
+      } else {
+        throw new Error(result.message || 'Error al crear reserva');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Hubo un error al procesar tu reserva. Por favor intenta nuevamente.');
+    }
   };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (!emailRegex.test(formData.email)) {
+  //     alert("Por favor ingrese un correo electrónico válido");
+  //     return;
+  //   }
+
+  //   const reservationData = {
+  //     ...formData,
+  //     paquete: currentPackage.title,
+  //     precioTotal: calculateTotalPrice()
+  //   };
+
+  //   console.log('Datos de reserva:', reservationData);
+  //   alert(`Gracias ${formData.nombre}, hemos recibido tu reserva. Te enviaremos la confirmación a ${formData.email}`);
+  //   closeModal();
+  //   setFormData({
+  //     nombre: '',
+  //     apellido: '',
+  //     celular: '',
+  //     email: '',
+  //     fecha: new Date().toISOString().split('T')[0],
+  //     adultos: 1
+  //   });
+  // };
 
   useEffect(() => {
     const handleKeyDown = (e) => {
