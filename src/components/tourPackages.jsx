@@ -55,6 +55,45 @@ const TourPackages = () => {
       ],
       img: './img/fotosprecio/ichugan01.png',
       alt: 'ichugan'
+    },
+    {
+      id: 4,
+      title: 'BAÑOS TERMALES ',
+      description: 'Termomedicinal de Tambochaca, Las aguas subterráneas abastecen 10 pozas y una piscina',
+      price: 50.70,
+      originalPrice: 80.00,
+      images: [
+        './img/fotosprecio/yanahuanca01.png',
+        './img/fotosprecio/yanahuanca01.png'
+      ],
+      img: './img/fotosprecio/villo.png',
+      alt: 'BAÑOS TERMALES '
+    },
+    {
+      id: 5,
+      title: 'GOÑICUTAC ROCCO',
+      description: 'Las edificaciones arqueológicas están distribuidas de este a oeste, destacando seis mausoleos funerarios de fina arquitectura intermedia',
+      price: 70.70,
+      originalPrice: 100.00,
+      images: [
+        './img/fotosprecio/yanahuanca01.png',
+        './img/fotosprecio/yanahuanca01.png'
+      ],
+      img: './img/fotosprecio/goñicutac.png',
+      alt: 'GOÑICUTAC ROCCO'
+    },
+    {
+      id: 6,
+      title: 'BAÑOS DE COLLPA',
+      description: 'San Juan Baños De Rabí se localiza en el distrito de Yanahuanca, provincia de Daniel Carrión del departamento de Pasco, Perú. ',
+      price: 120.70,
+      originalPrice: 140.00,
+      images: [
+        './img/fotosprecio/yanahuanca01.png',
+        './img/fotosprecio/yanahuanca01.png'
+        ],
+        img: './img/fotosprecio/rabi.png',
+        alt: 'BAÑOS DE COLLPA',
     }
   ];
 
